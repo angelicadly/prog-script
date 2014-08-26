@@ -8,3 +8,19 @@
     border-top: solid #DDDDDD 1px;
     background-color: #f5f5f5;
 }
+#BarraTitulo {
+    background: url(/static/img/capa3.png);
+    background-size: 800px 240px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.imgDesc img{
+    height: 200px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.descricao{
+    margin: 50px;
+}
