@@ -1,0 +1,21 @@
+td, th{
+    padding: 7px;
+}
+
+tr{
+    border: 3px double;
+    border-radius: 25px;
+}
+
+table{
+    margin-bottom: 10px;
+}
+
+#btn-novo{
+    margin: 7px;
+}
+
+#btn-filtrar{
+    margin: 7px;
+    margin-left:240px;
+}

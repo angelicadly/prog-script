@@ -6,32 +6,32 @@ from destaque_app import facade
 
 
 def index():
-    cmd = facade.list_destaquess_cmd()
-    destaques_list = cmd()
-    short_form=facade.destaques_short_form()
-    destaques_short = [short_form.fill_with_model(m) for m in destaques_list]
-    return JsonResponse(destaques_short)
+    cmd = facade.list_destaques_cmd()
+    destaque_list = cmd()
+    short_form=facade.destaque_short_form()
+    destaque_short = [short_form.fill_with_model(m) for m in destaque_list]
+    return JsonResponse(destaque_short)
 
 
-def save(**destaques_properties):
-    cmd = facade.save_destaques_cmd(**destaques_properties)
+def save(**destaque_properties):
+    cmd = facade.save_destaque_cmd(**destaque_properties)
     return _save_or_update_json_response(cmd)
 
 
-def update(destaques_id, **destaques_properties):
-    cmd = facade.update_destaques_cmd(destaques_id, **destaques_properties)
+def update(destaque_id, **destaque_properties):
+    cmd = facade.update_destaque_cmd(destaque_id, **destaque_properties)
     return _save_or_update_json_response(cmd)
 
 
-def delete(destaques_id):
-    facade.delete_destaques_cmd(destaques_id)()
+def delete(destaque_id):
+    facade.delete_destaque_cmd(destaque_id)()
 
 
 def _save_or_update_json_response(cmd):
     try:
-        destaques = cmd()
+        destaque = cmd()
     except CommandExecutionException:
         return JsonResponse({'errors': cmd.errors})
-    short_form=facade.destaques_short_form()
-    return JsonResponse(short_form.fill_with_model(destaques))
+    short_form=facade.destaque_short_form()
+    return JsonResponse(short_form.fill_with_model(destaque))
 

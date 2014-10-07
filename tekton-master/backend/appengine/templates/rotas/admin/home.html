@@ -1,0 +1,43 @@
+{% extends 'rotas/base.html' %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{% trans %}This is a generic home for rota_app {% endtrans %}  </h1>
+                <a href="{{ new_path }}" class="btn btn-success">{% trans %}Create New Rota{% endtrans %}</a>
+                <hr/>
+                <h2>{% trans %}List of Rotas{% endtrans %}</h2>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th/>
+                        <th>{% trans %}Id{% endtrans %}</th>
+                        <th>{% trans %}Creation{% endtrans %}</th>
+                        <th>{% trans %}Idade{% endtrans %}</th>
+                        <th>{% trans %}Nome{% endtrans %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for rota in rotas %}
+                        <tr>
+                            <td><a href="{{ rota.edit_path }}" class="btn btn-success btn-sm"><i
+                                    class="glyphicon glyphicon-pencil"></i></a></td>
+                            <td>{{ rota.id }}</td>
+                            <td>{{ rota.creation }}</td>
+                            <td>{{ rota.idade }}</td>
+                            <td>{{ rota.nome }}</td>
+                            <td>
+                                <form action="{{ rota.delete_path }}" method="post" onsubmit="return confirm('{{_('Are you sure to delete? Press cancel to avoid deletion.')}}');">
+                                    {{ csrf_input() }}
+                                    <button class="btn btn-danger btn-sm"><i
+                                            class="glyphicon glyphicon-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

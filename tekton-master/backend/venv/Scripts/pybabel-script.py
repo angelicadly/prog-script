@@ -1,4 +1,4 @@
-#!C:\tekton-master\backend\venv\Scripts\python.exe
+#!D:\Seiji\Documentos\progscr\tekton-master\backend\venv\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'Babel==1.3','console_scripts','pybabel'
 __requires__ = 'Babel==1.3'
 import sys

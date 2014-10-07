@@ -1,6 +1,6 @@
-{% extends 'destaques/base.html' %}
+{% extends 'rotas/base.html' %}
 {% block body %}
-    {% set destaque=destaque or None %}
+    {% set rota=rota or None %}
     {% set errors=errors or None %}
     <div class="container">
         <div class="row">
@@ -8,13 +8,12 @@
                 <br/>
 
                 <div class="well">
-                    <h1 class="text-center">{% trans %}Destaque Form{% endtrans %}</h1>
+                    <h1 class="text-center">{% trans %}Rota Form{% endtrans %}</h1>
 
                     <form action="{{ save_path }}" method="post" role="form">
                         {{ csrf_input() }}
-                        {{ form_input(_('Categoria'),'categoria',destaque.categoria,errors.categoria) }}
-                        {{ form_input(_('Destino'),'destino',destaque.destino,errors.destino) }}
-                        {{ form_input(_('Preco'),'preco',destaque.preco,errors.preco) }}
+                        {{ form_input(_('Idade'),'idade',rota.idade,errors.idade) }}
+                        {{ form_input(_('Nome'),'nome',rota.nome,errors.nome) }}
                         <button type="submit" class="btn btn-success">{% trans %}Save{% endtrans %}</button>
                     </form>
                 </div>

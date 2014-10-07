@@ -11,8 +11,8 @@ from tekton.gae.middleware.router_middleware import RouterMiddleware, ExecutionM
 from tekton.gae.middleware.webapp2_dependencies import Webapp2Dependencies
 from gaepermission.middleware import LoggedUserMiddleware, PermissionMiddleware
 
-APP_URL = 'https://tekton-fullstack.appspot.com'
-SENDER_EMAIL = 'renzon@gmail.com'
+APP_URL = 'https://4-dot-projviajebem.appspot.com/'
+SENDER_EMAIL = 'angelica.dly@gmail.com'
 DEFAULT_LOCALE = 'en_US'
 DEFAULT_TIMEZONE = 'US/Eastern'
 LOCALES = ['en_US', 'pt_BR']

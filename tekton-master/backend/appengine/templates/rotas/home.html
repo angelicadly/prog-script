@@ -1,0 +1,10 @@
+{% extends 'rotas/base.html' %}
+{% block body %}
+    {{ csrf_input() }}
+    <form action="{{save_path}}"  method="post">
+    {{ csrf_input()}}
+    {{ form_input('Nome','nome','aaa','')}}
+    <button type="submit">Salvar</button>
+    </form>
+
+{% endblock %}

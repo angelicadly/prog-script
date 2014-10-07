@@ -1,43 +1,214 @@
 {% extends 'base/base.html' %}
+<!--<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Viaje Bem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">-->
+
+	<!--link rel="stylesheet/less" href="static/bootstrap/less/bootstrap.less" type="text/css"-->
+	<!--link rel="stylesheet/less" href="static/bootstrap/less/responsive-utilities.less" type="text/css"-->
+	<!--script src="static/bootstrap/js/less-1.3.3.min.js"></script-->
+	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
 {% block css %}
-    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-social.css"/>
-    <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"/>
+	<link href="static/css/style.css" rel="stylesheet">
+	<link href="static/css/default.css" rel="stylesheet">
 {% endblock %}
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="img/favicon.png">
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>-->
+
 {% block body %}
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Tekton</h1>
-                <p>{% trans %}A Full-Stack project for Google App Engine{% endtrans %}</p>
-            </div>
-        </div>
-        <br/>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="well">
-                    <h2>{% trans %}Create CRUD code on
-                        <a href="https://cloud.google.com/products/app-engine/">App Engine</a>{% endtrans %}
-                    </h2>
-                    <br/>
-
-                    <p>
-                        <a href="/courses" class="btn btn-primary"></i>{% trans %} Check Courses App
-                            Out{% endtrans %} &raquo;</a>
-                    </p>
+<!--</head>
+<body>-->
+<div class="container">
+	<div class="row clearfix">
+        <div class="col-md-12 column">
+			<!--<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a href="/home"><img src="static/img/logo.png" width="90" height="50" alt="Viaje Bem"/></a>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="well">
-                    <h2>{% trans %}Tekton is open source.{% endtrans %}</h2>
-                    <br/>
 
-                    <p>
-                        <a href="https://github.com/renzon/tekton-fullstack" class="btn btn-social btn-github"><i
-                                class="fa icon-github"></i>{% trans %}Check Git Hub Out{% endtrans %} &raquo;</a>
-                    </p>
-                </div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<!--					<ul class="nav navbar-nav">
+						<li>
+							<a href="#">Ranking</a>
+						</li>
+						<li>
+							<a href="#">Promoções</a>
+						</li>
+                        <li>
+							<a href="/destaques">Destaques</a>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pesquisa por Estado<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Acre</a>
+                                </li>
+                                <li>
+                                    <a href="#">Alagoas</a>
+                                </li>
+                                <li>
+                                    <a href="#">Amapá</a>
+                                </li>
+                                <li>
+                                    <a href="#">Amazonas</a>
+                                </li>
+                                <li>
+                                    <a href="#">Bahia</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ceará</a>
+                                </li>
+                                <li>
+                                    <a href="#">Distrito Federal</a>
+                                </li>
+                                <li>
+                                    <a href="#">Espírito Santo</a>
+                                </li>
+                                <li>
+                                    <a href="#">Goiás</a>
+                                </li>
+                                <li>
+                                    <a href="#">Maranhão</a>
+                                </li>
+                                <li>
+                                    <a href="#">Mato Grosso</a>
+                                </li>
+                                <li>
+                                    <a href="#">Mato Grosso do Sul</a>
+                                </li>
+                                <li>
+                                    <a href="#">Minas Gerais</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pará</a>
+                                </li>
+                                <li>
+                                    <a href="#">Paraíba</a>
+                                </li>
+                                <li>
+                                    <a href="#">Paraná</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pernambuco</a>
+                                </li>
+                                <li>
+                                    <a href="#">Piauí</a>
+                                </li>
+                                <li>
+                                    <a href="#">Rio de Janeiro</a>
+                                </li>
+                                <li>
+                                    <a href="#">Rio Grande do Norte</a>
+                                </li>
+                                <li>
+                                    <a href="#">Rio Grande do Sul</a>
+                                </li>
+                                <li>
+                                    <a href="#">Rondônia</a>
+                                </li>
+                                <li>
+                                    <a href="#">Roraima</a>
+                                </li>
+                                <li>
+                                    <a href="#">Santa Catarina</a>
+                                </li>
+                                <li>
+                                    <a href="#">São Paulo</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sergipe</a>
+                                </li>
+                                <li>
+                                    <a href="#">Tocantins</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <form class="navbar-form navbar-right" role="search">
+                            <div class="form-group">
+                                <input class="form-control" type="text">
+                            </div> <button type="submit" class="btn btn-default">Pesquisar</button>
+                        </form>
+					</ul>
+				</div>
+
+			</nav>-->
+			<div id="BarraTitulo" class="jumbotron">
+				<h1>
+					Viaje Bem!
+				</h1>
+				<p>
+					Encontre os melhores destinos de viagens e os melhores pacotes promocionais reunidos em um único site.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-4 column">
+			<h2>
+				Porto de Galinhas
+			</h2>
+            <div class="imgDesc">
+                <img src="static/img/portodegalinhas.jpg">
             </div>
-        </div>
-    </div>
+			<p>
+				Porto de Galinhas é o lugar ideal para quem quer estar em contato com a natureza. Conheça suas piscinas naturais, mangues, e até mesmo tenha a oportunidade de encontrar animais em risco de extinção como tartarugas e cavalos marinhos.
+			</p>
+			<p>
+				<a class="btn" href="#">Veja Mais »</a>
+			</p>
+		</div>
+		<div class="col-md-4 column">
+			<h2>
+				Gramado
+			</h2>
+            <div class="imgDesc">
+                <img src="static/img/gramado.jpg">
+            </div>
+			<p>
+				Para quem gosta de frio gramado pode ser o destino certo. Visite e encontre inúmeras atrações que vão desde museus de cera, e de minerais e pedras preciosas, a uma mina de mais de 80 metros.
+			</p>
+			<p>
+				<a class="btn" href="#">Veja Mais »</a>
+			</p>
+		</div>
+		<div class="col-md-4 column">
+			<h2>
+				Brotas
+			</h2>
+            <div class="imgDesc">
+                <img src="static/img/brotas.jpg">
+            </div>
+			<p>
+				Brotas é o destino certo para quem gosta de esportes radicais. Rafting, bóia-cross, arvorismo, tirolesa, rapel, canyoning e cavalgadas são algumas da opções encontradas pelos aventureiros que visitam a cidade.
+			</p>
+			<p>
+				<a class="btn" href="#">Veja mais »</a>
+			</p>
+		</div>
+	</div>
+</div>
+<!--</body>
+</html>-->
 {% endblock %}

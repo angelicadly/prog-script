@@ -4,23 +4,23 @@ from config.template_middleware import TemplateResponse
 from gaebusiness.business import CommandExecutionException
 from tekton import router
 from gaecookie.decorator import no_csrf
-from destaque_app import facade
-from routes.destaques import admin
+from rota_app import facade
+from routes.rotas import admin
 
 
 @no_csrf
 def index():
-    return TemplateResponse({'save_path': router.to_path(save)},'destaques/admin/form.html')
+    return TemplateResponse({'save_path': router.to_path(save)},'rotas/admin/form.html')
 
 
-def save(_handler, destaque_id=None, **destaque_properties):
-    cmd = facade.save_destaque_cmd(**destaque_properties)
+def save(_handler, rota_id=None, **rota_properties):
+    cmd = facade.save_rota_cmd(**rota_properties)
     try:
         cmd()
     except CommandExecutionException:
         context = {'errors': cmd.errors,
-                   'destaque': cmd.form}
+                   'rota': cmd.form}
 
-        return TemplateResponse(context, 'destaques/admin/form.html')
+        return TemplateResponse(context, 'rotas/admin/form.html')
     _handler.redirect(router.to_path(admin))
 

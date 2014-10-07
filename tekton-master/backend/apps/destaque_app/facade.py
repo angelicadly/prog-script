@@ -1,76 +1,76 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 from gaegraph.business_base import NodeSearch, DeleteNode
-from destaque_app.commands import ListDestaquesCommand, SaveDestaquesCommand, UpdateDestaquesCommand, \
-    DestaquesPublicForm, DestaquesDetailForm, DestaquesShortForm
+from destaque_app.commands import ListDestaqueCommand, SaveDestaqueCommand, UpdateDestaqueCommand, \
+    DestaquePublicForm, DestaqueDetailForm, DestaqueShortForm
 
 
-def save_destaques_cmd(**destaques_properties):
+def save_destaque_cmd(**destaque_properties):
     """
-    Command to save Destaques entity
-    :param destaques_properties: a dict of properties to save on model
-    :return: a Command that save Destaques, validating and localizing properties received as strings
+    Command to save Destaque entity
+    :param destaque_properties: a dict of properties to save on model
+    :return: a Command that save Destaque, validating and localizing properties received as strings
     """
-    return SaveDestaquesCommand(**destaques_properties)
+    return SaveDestaqueCommand(**destaque_properties)
 
 
-def update_destaques_cmd(destaques_id, **destaques_properties):
+def update_destaque_cmd(destaque_id, **destaque_properties):
     """
-    Command to update Destaques entity with id equals 'destaques_id'
-    :param destaques_properties: a dict of properties to update model
-    :return: a Command that update Destaques, validating and localizing properties received as strings
+    Command to update Destaque entity with id equals 'destaque_id'
+    :param destaque_properties: a dict of properties to update model
+    :return: a Command that update Destaque, validating and localizing properties received as strings
     """
-    return UpdateDestaquesCommand(destaques_id, **destaques_properties)
+    return UpdateDestaqueCommand(destaque_id, **destaque_properties)
 
 
-def list_destaquess_cmd():
+def list_destaques_cmd():
     """
-    Command to list Destaques entities ordered by their creation dates
+    Command to list Destaque entities ordered by their creation dates
     :return: a Command proceed the db operations when executed
     """
-    return ListDestaquesCommand()
+    return ListDestaqueCommand()
 
 
-def destaques_detail_form(**kwargs):
+def destaque_detail_form(**kwargs):
     """
-    Function to get Destaques's detail form.
+    Function to get Destaque's detail form.
     :param kwargs: form properties
     :return: Form
     """
-    return DestaquesDetailForm(**kwargs)
+    return DestaqueDetailForm(**kwargs)
 
 
-def destaques_short_form(**kwargs):
+def destaque_short_form(**kwargs):
     """
-    Function to get Destaques's short form. just a subset of destaques's properties
+    Function to get Destaque's short form. just a subset of destaque's properties
     :param kwargs: form properties
     :return: Form
     """
-    return DestaquesShortForm(**kwargs)
+    return DestaqueShortForm(**kwargs)
 
-def destaques_public_form(**kwargs):
+def destaque_public_form(**kwargs):
     """
-    Function to get Destaques'spublic form. just a subset of destaques's properties
+    Function to get Destaque'spublic form. just a subset of destaque's properties
     :param kwargs: form properties
     :return: Form
     """
-    return DestaquesPublicForm(**kwargs)
+    return DestaquePublicForm(**kwargs)
 
 
-def get_destaques_cmd(destaques_id):
+def get_destaque_cmd(destaque_id):
     """
-    Find destaques by her id
-    :param destaques_id: the destaques id
+    Find destaque by her id
+    :param destaque_id: the destaque id
     :return: Command
     """
-    return NodeSearch(destaques_id)
+    return NodeSearch(destaque_id)
 
 
-def delete_destaques_cmd(destaques_id):
+def delete_destaque_cmd(destaque_id):
     """
-    Construct a command to delete a Destaques
-    :param destaques_id: destaques's id
+    Construct a command to delete a Destaque
+    :param destaque_id: destaque's id
     :return: Command
     """
-    return DeleteNode(destaques_id)
+    return DeleteNode(destaque_id)
 

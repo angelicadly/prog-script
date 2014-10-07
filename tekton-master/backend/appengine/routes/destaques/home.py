@@ -11,10 +11,10 @@ from routes.destaques import admin
 @login_not_required
 @no_csrf
 def index():
-    cmd = facade.list_destaquess_cmd()
-    destaquess = cmd()
-    public_form = facade.destaques_public_form()
-    destaques_public_dcts = [public_form.fill_with_model(destaques) for destaques in destaquess]
-    context = {'destaquess': destaques_public_dcts,'admin_path':router.to_path(admin)}
+    cmd = facade.list_destaques_cmd()
+    destaques = cmd()
+    public_form = facade.destaque_public_form()
+    destaque_public_dcts = [public_form.fill_with_model(destaque) for destaque in destaques]
+    context = {'destaques': destaque_public_dcts,'admin_path':router.to_path(admin)}
     return TemplateResponse(context)
 

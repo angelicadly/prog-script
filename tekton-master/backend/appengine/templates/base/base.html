@@ -12,12 +12,12 @@
     </div>
 {% endmacro %}
 <html>
-<head lang="en">
+<head lang="pt-br">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}Tekton Fullstrack{% endblock %}</title>
+    <title>{% block title %}Viaje Bem{% endblock %}</title>
     <!-- Bootstrap -->
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/default.css" rel="stylesheet">
@@ -33,35 +33,34 @@
     <![endif]-->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    {% block css %}{% endblock %}
+    {% block css %}
+          <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"/>
+	      <link href="/static/css/style.css" rel="stylesheet">
+	      <link href="/static/css/default.css" rel="stylesheet">
+    {% endblock %}
     {% block js %}{% endblock %}
 </head>
 <body>
-<div class="navbar-wrapper">
-    <div class="navbar navbar-inverse navbar-static-top">
+<div class="row clearfix">
+    <div class="col-md-12 column">
+	<nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="/" class="navbar-brand">Tekton</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a href="/viajeBems"><img src="/static/img/logo.png" width="90" height="50" alt="Viaje Bem"/></a>
         </div>
-        <div class="navbar-collapse collapse">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 {% macro select_tab(tab='') %}
-                   <li {{ 'class=active' if tab=='COURSES' }}><a href="/courses">{% trans %}Courses{% endtrans %}</a></li>
-                   <li {{ 'class=active' if tab=='VIAJE BEM' }}><a href="/viajeBems">{% trans %}Viaje Bem{% endtrans %}</a></li>
+                   <li {{ 'class=active' if tab=='RANKING' }}><a href="/ranking">{% trans %}Ranking{% endtrans %}</a></li>
+                   <li {{ 'class=active' if tab=='PROMOÇÕES' }}><a href="/promoções">{% trans %}Promoções{% endtrans %}</a></li>
                    <li {{ 'class=active' if tab=='DESTAQUES' }}><a href="/destaques">{% trans %}Destaques{% endtrans %}</a></li>
-                    {% if _logged_user and 'ADMIN' in _logged_user.groups %}
+                   <li {{ 'class=active' if tab=='DESTINOS' }}><a href="/destinos">{% trans %}Destinos{% endtrans %}</a></li> {% if _logged_user and 'ADMIN' in _logged_user.groups %}
                         <li {{ 'class=active' if tab=='ADMIN' }}><a href="/admin">{% trans %}Admin{% endtrans %}</a></li>
                     {% endif %}
                 {% endmacro %}
                 {% block tabs %}
                     {{ select_tab() }}
                 {% endblock %}
-            </ul>
-            <div class="nav navbar-nav pull-right pad8">
+            </ul><div class="nav navbar-nav pull-right log">
                 {% if _logged_user %}
 
                     <form class="form-inline" action="{{ _logout_path }}" method="post">
@@ -73,12 +72,123 @@
                     </form>
 
                 {% else %}
-                    <a class="btn btn-success" href="{{ _login_path }}">{% trans %}Login{% endtrans %}</a>
+                    <a class="btn btn-primary btn-large" href="{{ _login_path }}">{% trans %}Login{% endtrans %}</a>
 
                 {% endif %}
 
             </div>
-        </div>
+					<ul class="nav navbar-nav pull-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pesquisa por Estado<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Acre</a>
+                                </li>
+                                <li>
+                                    <a href="#">Alagoas</a>
+                                </li>
+                                <li>
+                                    <a href="#">Amapá</a>
+                                </li>
+                                <li>
+                                    <a href="#">Amazonas</a>
+                                </li>
+                                <li>
+                                    <a href="#">Bahia</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ceará</a>
+                                </li>
+                                <li>
+                                    <a href="#">Distrito Federal</a>
+                                </li>
+                                <li>
+                                    <a href="#">Espírito Santo</a>
+                                </li>
+                                <li>
+                                    <a href="#">Goiás</a>
+                                </li>
+                                <li>
+                                    <a href="#">Maranhão</a>
+                                </li>
+                                <li>
+                                    <a href="#">Mato Grosso</a>
+                                </li>
+                                <li>
+                                    <a href="#">Mato Grosso do Sul</a>
+                                </li>
+                                <li>
+                                    <a href="#">Minas Gerais</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pará</a>
+                                </li>
+                                <li>
+                                    <a href="#">Paraíba</a>
+                                </li>
+                                <li>
+                                    <a href="#">Paraná</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pernambuco</a>
+                                </li>
+                                <li>
+                                    <a href="#">Piauí</a>
+                                </li>
+                                <li>
+                                    <a href="#">Rio de Janeiro</a>
+                                </li>
+                                <li>
+                                    <a href="#">Rio Grande do Norte</a>
+                                </li>
+                                <li>
+                                    <a href="#">Rio Grande do Sul</a>
+                                </li>
+                                <li>
+                                    <a href="#">Rondônia</a>
+                                </li>
+                                <li>
+                                    <a href="#">Roraima</a>
+                                </li>
+                                <li>
+                                    <a href="#">Santa Catarina</a>
+                                </li>
+                                <li>
+                                    <a href="#">São Paulo</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sergipe</a>
+                                </li>
+                                <li>
+                                    <a href="#">Tocantins</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <form class="navbar-form pull-right" role="search">
+                            <div class="form-group">
+                                <input class="form-control" type="text">
+                            </div> <button type="submit" class="btn btn-default">Pesquisar</button>
+                        </form>
+					</ul>
+            <!--<div class="nav navbar-nav pull-right pad8">
+                {% if _logged_user %}
+
+                    <form class="form-inline" action="{{ _logout_path }}" method="post">
+                        <div class="input-append" id="logout-div">
+                            <span>{{ _logged_user.email }}</span>
+                            <button class="btn btn-danger" type="submit">{% trans %}Logout{% endtrans %}</button>
+                            {{ csrf_input() }}
+                        </div>
+                    </form>
+
+                {% else %}
+                    <a class="btn btn-primary btn-large" href="{{ _login_path }}">{% trans %}Login{% endtrans %}</a>
+
+                {% endif %}
+
+            </div>
+        </div>-->
+    </div>
     </div>
 </div>
 {% block body %}{% endblock %}
